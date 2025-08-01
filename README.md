@@ -2,7 +2,9 @@
 
 A stunning, interactive portfolio website built with React, Three.js, and modern web technologies. Features a realistic 3D VS Code editor, smooth animations, and a professional design.
 
-![Portfolio Preview](https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=400&fit=crop)
+## 🔮 Live Demo
+👉 [Live preview](https://sepideh-portfolio-v2.vercel.app/)  
+
 
 ## ✨ Features
 
@@ -32,7 +34,7 @@ A stunning, interactive portfolio website built with React, Three.js, and modern
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/updated-portfolio.git
+git clone https://github.com/Sepidehpakseresht/sepideh-portfolio-v2.git
 cd updated-portfolio
 ```
 
