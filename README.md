@@ -2,7 +2,7 @@
 
 A stunning, interactive portfolio website built with React, Three.js, and modern web technologies. Features a realistic 3D VS Code editor, smooth animations, and a professional design.
 
-![Portfolio Preview](sepideh-portfolio-v2.vercel.app)
+![Portfolio Preview](https://sepideh-portfolio-v2.vercel.app/)
 
 ## ✨ Features
 
