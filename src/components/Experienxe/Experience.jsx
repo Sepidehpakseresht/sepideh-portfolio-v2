@@ -43,29 +43,29 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-6">
+    <section id="experience" className="py-16 md:py-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
-            Experience & <span className="bg-primary px-4 py-2 rounded-lg">Education</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <span className="bg-primary px-2 md:px-4 py-2 rounded-lg">Experience</span> & Education
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-8">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mt-6 md:mt-8 px-4">
             My journey in technology and design, from formal education to hands-on experience
           </p>
         </Motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary/20 via-primary to-primary/20"></div>
+          {/* Central Timeline Line - Hidden on mobile, visible on md+ */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary/20 via-primary to-primary/20"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <Motion.div
                 key={index}
@@ -76,17 +76,28 @@ const Experience = () => {
                   index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
                 }`}
               >
-                {/* Timeline Node */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full shadow-orange z-10 flex items-center justify-center">
+                {/* Timeline Node - Hidden on mobile, visible on md+ */}
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full shadow-orange z-10 items-center justify-center">
                   <exp.icon className="text-white text-xs" />
                 </div>
 
-                {/* Content Card */}
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                {/* Content Card - Full width on mobile, 5/12 on desktop */}
+                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                   <Motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
-                    className="glass rounded-2xl p-6 border border-glass-border shadow-orange hover:shadow-orange/50 transition-all duration-300"
+                    className="glass rounded-2xl p-4 md:p-6 border border-glass-border shadow-orange hover:shadow-orange/50 transition-all duration-300"
                   >
+                    {/* Mobile Icon - Visible only on mobile */}
+                    <div className="md:hidden flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <exp.icon className="text-white text-sm" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white">{exp.title}</h3>
+                        <p className="text-sm text-primary font-semibold">{exp.institution}</p>
+                      </div>
+                    </div>
+
                     {/* Progress Bar */}
                     <div className="mb-4">
                       <div className="flex justify-between items-center mb-2">
@@ -105,8 +116,9 @@ const Experience = () => {
 
                     {/* Content */}
                     <div className="space-y-3">
-                      <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                      <div className="flex items-center gap-2 text-primary font-semibold">
+                      {/* Desktop title - hidden on mobile */}
+                      <h3 className="hidden md:block text-xl font-bold text-white">{exp.title}</h3>
+                      <div className="hidden md:flex items-center gap-2 text-primary font-semibold">
                         <span>{exp.institution}</span>
                       </div>
                       <p className="text-sm text-gray-400 font-medium">{exp.period}</p>
@@ -127,7 +139,7 @@ const Experience = () => {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 w-4 h-4 bg-primary rounded-full shadow-orange"
+            className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -bottom-8 w-4 h-4 bg-primary rounded-full shadow-orange"
           />
         </div>
 
@@ -136,7 +148,7 @@ const Experience = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
         >
           {[
             { number: "3+", label: "Years Learning", icon: "🎓" },
@@ -147,11 +159,11 @@ const Experience = () => {
             <Motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="glass rounded-xl p-6 text-center border border-glass-border"
+              className="glass rounded-xl p-4 md:p-6 text-center border border-glass-border"
             >
-              <div className="text-3xl mb-2">{stat.icon}</div>
-              <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
+              <div className="text-2xl md:text-3xl mb-2">{stat.icon}</div>
+              <div className="text-xl md:text-2xl font-bold text-primary mb-1">{stat.number}</div>
+              <div className="text-xs md:text-sm text-gray-400">{stat.label}</div>
             </Motion.div>
           ))}
         </Motion.div>

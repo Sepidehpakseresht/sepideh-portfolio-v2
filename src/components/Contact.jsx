@@ -65,10 +65,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
-            Let's <span className="bg-primary px-4 py-2 rounded-lg">Connect</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <span className="bg-primary px-2 md:px-4 py-2 rounded-lg">Let's</span> Connect
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-8">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mt-6 md:mt-8 px-4">
             Ready to bring your ideas to life? Let's discuss your next project
           </p>
         </Motion.div>
