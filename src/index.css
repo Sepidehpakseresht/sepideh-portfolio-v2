@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0B0E13;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #181C23;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0E13;
+}
+
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.text-primary {
+  color: #F96902;
+}
+.bg-primary {
+  background-color: #F96902;
+}
+.shadow-orange {
+  box-shadow: 0 0 16px #F96902;
+}
+
+.focus-orange:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F96902;
+}
+
+::selection {
+  background: #F96902;
+  color: #fff;
+}
