@@ -32,7 +32,7 @@ A stunning, interactive portfolio website built with React, Three.js, and modern
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/updated-portfolio.git
+git clone https://github.com/Sepidehpakseresht/sepideh-portfolio-v2.git
 cd updated-portfolio
 ```
 
