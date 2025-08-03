@@ -8,7 +8,7 @@ const projects = [
     description: "Modern React portfolio with realistic 3D VS Code editor, interactive hover effects, and professional orange/dark theme design.",
     image: "/portfolio2-cover.png",
     technologies: ["React 18", "Three.js", "Framer Motion", "Tailwind CSS", "Vite", "Vercel"],
-    github: "https://github.com/yourusername/social-app",
+    github: "https://github.com/Sepidehpakseresht/sepideh-portfolio-v2.git",
     live: "#",
     preview: "/portfolio2-preview.png"
   },
@@ -35,7 +35,7 @@ const projects = [
     description: "A storytelling-based landing page for immigrant tech professionals. Clean, modern UI and smooth scroll.",
     image: "/tech-cover.png",
     technologies: ["HTML5", "CSS3", "Bootstrap", "Vercel"],
-    github: "https://github.com/yourusername/portfolio",
+    github: "https://github.com/Sepidehpakseresht/Tech-Immigrants.git",
     live: "https://tech-immigrants.vercel.app/",
     preview: "/tech-preview.png"
   },
@@ -53,7 +53,7 @@ const projects = [
     description: "Developed a responsive, Farsi-first website for Golzarf with interactive 3D visuals and a clean, scalable UI.",
     image: "/question-mark.avif",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Three.js", "Blender"],
-    github: "https://github.com/yourusername/ai-chat",
+    github: "https://github.com/Sepidehpakseresht",
     live: "#",
     preview: "/question-mark.avif"
   }
