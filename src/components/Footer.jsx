@@ -11,7 +11,7 @@ const Footer = () => {
         transition={{ duration: 0.8 }}
         className="flex items-center justify-center gap-2"
       >
-        <span className="font-display text-primary font-bold">Sepi.dev</span>
+        <span className="font-display text-primary font-bold">sepi.codes</span>
         <span className="text-primary">—</span>
         <span className="flex items-center gap-1">
           Made with <FaHeart className="text-red-500 text-xs" />
