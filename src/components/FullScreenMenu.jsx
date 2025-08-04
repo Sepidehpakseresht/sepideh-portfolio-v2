@@ -17,7 +17,7 @@ const FullScreenMenu = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="w-12 h-12 rounded-full glass flex items-center justify-center text-primary hover:text-white hover:shadow-orange transition-all duration-300 touch-manipulation"
+        className="w-12 overflow-x-hidden h-12 rounded-full glass flex items-center justify-center text-primary hover:text-white hover:shadow-orange transition-all duration-300 touch-manipulation"
         aria-label="Open menu"
       >
         <FaBars className="text-lg" />

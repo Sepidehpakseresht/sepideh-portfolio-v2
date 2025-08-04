@@ -52,7 +52,7 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-extrabold text-white mb-4">
             <span className="bg-primary px-2 md:px-4 py-2 rounded-lg">Experience</span> & Education
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mt-6 md:mt-8 px-4">

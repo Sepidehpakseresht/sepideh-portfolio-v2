@@ -77,7 +77,7 @@ const Works = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="works" className="py-20 px-6">
+    <section id="works" className="py-20 px-6 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Motion.div

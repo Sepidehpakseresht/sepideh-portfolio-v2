@@ -4,7 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="w-full text-center py-6 text-gray-400 text-sm border-t border-glass-border bg-background">
+    <footer className="w-full overflow-x-hidden text-center py-6 text-gray-400 text-sm border-t border-glass-border bg-background">
       <Motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

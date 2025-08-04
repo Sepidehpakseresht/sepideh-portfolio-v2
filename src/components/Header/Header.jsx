@@ -24,7 +24,7 @@ export default function Header() {
         scrolled ? 'glass backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 overflow-x-hidden">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Motion.div
@@ -34,9 +34,6 @@ export default function Header() {
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <span className="text-white font-display font-bold text-lg">S</span>
             </div>
-            {/* <span className="text-xl font-display font-bold text-white">
-              Sepideh
-            </span> */}
           </Motion.div>
 
           {/* Desktop Navigation */}
@@ -62,31 +59,6 @@ export default function Header() {
               </Motion.a>
             ))}
           </nav>
-
-          {/* Social Links */}
-          {/* <div className="hidden md:flex items-center gap-4">
-            {[
-              { icon: FaGithub, href: "https://github.com/Sepidehpakseresht", label: "GitHub" },
-              { icon: FaLinkedin, href: "https://www.linkedin.com/in/sepideh-pakseresht-1b3967239", label: "LinkedIn" },
-              { icon: FaEnvelope, href: "mailto:sepiidehpakseresht@gmail.com", label: "Email" }
-            ].map((social, index) => (
-              <Motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                whileHover={{ scale: 1.2, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 rounded-full glass flex items-center justify-center text-primary hover:text-white hover:shadow-orange transition-all duration-300"
-              >
-                <social.icon className="text-lg" />
-              </Motion.a>
-            ))}
-          </div> */}
-
           {/* Mobile Menu */}
           <div className="lg:hidden">
             <FullScreenMenu />

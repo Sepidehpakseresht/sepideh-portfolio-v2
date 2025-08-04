@@ -56,7 +56,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="contact" className="py-20 px-6 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Motion.div

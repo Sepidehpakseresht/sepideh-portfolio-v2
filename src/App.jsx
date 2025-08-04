@@ -10,7 +10,7 @@ import { Suspense } from 'react';
 
 function App() {
   return (
-    <div className="bg-background text-white min-h-screen">
+    <div className="bg-background text-white min-h-screen overflow-x-hidden">
       <Header />
       <main>
        <Suspense fallback={<div className="text-white text-center">🚀 Launching...</div>}></Suspense>

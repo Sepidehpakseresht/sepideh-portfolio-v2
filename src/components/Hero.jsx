@@ -211,7 +211,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full max-w-7xl mx-auto px-4 md:px-6 py-28 md:py-40 min-h-[70vh] flex flex-col lg:flex-row items-center justify-between"
+      className="relative w-full overflow-x-hidden max-w-7xl mx-auto px-4 md:px-6 py-28 md:py-40 min-h-[70vh] flex flex-col lg:flex-row items-center justify-between"
       style={{ background: '#0B0E13' }}
     >
       {/* Left: Modern Intro */}
