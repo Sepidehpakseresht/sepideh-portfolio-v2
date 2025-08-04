@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import { FaReact, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiTailwindcss, SiFigma } from 'react-icons/si';
@@ -7,20 +7,18 @@ const skills = [
   {
     name: 'React',
     icon: FaReact,
-    color: '#F96902',
     description: 'Building interactive UIs with modern React patterns and hooks',
     level: 'Intermediate',
     projects: '3+ projects',
     snippet: `function App() {
   const [count, setCount] = useState(0);
-  
-return (
-  <div className="app">
-    <button onClick={() => setCount(count + 1)}>
-      Count: {count}
-    </button>
-  </div>
-);
+  return (
+    <div className="app">
+      <button onClick={() => setCount(count + 1)}>
+        Count: {count}
+      </button>
+    </div>
+  );
 }`,
     preview: (
       <div className="w-full h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
@@ -31,7 +29,6 @@ return (
   {
     name: 'JavaScript',
     icon: FaJs,
-    color: '#F96902',
     description: 'Modern ES6+ JavaScript with async/await and functional programming',
     level: 'Advanced',
     projects: '5+ projects',
@@ -53,7 +50,6 @@ return (
   {
     name: 'Tailwind CSS',
     icon: SiTailwindcss,
-    color: '#F96902',
     description: 'Utility-first CSS framework for rapid UI development',
     level: 'Advanced',
     projects: '3+ projects',
@@ -71,12 +67,10 @@ return (
   {
     name: 'Figma',
     icon: SiFigma,
-    color: '#F96902',
     description: 'Design and prototyping with modern UI/UX principles',
     level: 'Intermediate',
     projects: '3+ projects',
-    snippet: `// Design System Components
-const Button = ({ variant, children }) => {
+    snippet: `const Button = ({ variant, children }) => {
   const styles = {
     primary: 'bg-blue-500 text-white',
     secondary: 'bg-gray-200 text-gray-800'
@@ -92,7 +86,6 @@ const Button = ({ variant, children }) => {
   {
     name: 'HTML5',
     icon: FaHtml5,
-    color: '#F96902',
     description: 'Semantic HTML5 markup with accessibility best practices',
     level: 'Advanced',
     projects: '10+ projects',
@@ -115,7 +108,6 @@ const Button = ({ variant, children }) => {
   {
     name: 'CSS3',
     icon: FaCss3Alt,
-    color: '#F96902',
     description: 'Modern CSS with Flexbox, Grid, and custom properties',
     level: 'Advanced',
     projects: '10+ projects',
@@ -128,7 +120,6 @@ const Button = ({ variant, children }) => {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
-
 .card:hover {
   transform: translateY(-2px);
 }`,
@@ -142,9 +133,20 @@ const Button = ({ variant, children }) => {
 
 const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [activeSkill, setActiveSkill] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <section id="skills" className="py-20 px-6 overflow-x-hidden">
+    <section id="skills" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Motion.div
@@ -161,7 +163,7 @@ const Skills = () => {
           </p>
         </Motion.div>
 
-        {/* Skills Grid */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <Motion.div
@@ -171,24 +173,23 @@ const Skills = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onHoverStart={() => setHoveredSkill(skill.name)}
               onHoverEnd={() => setHoveredSkill(null)}
+              onClick={() => {
+                if (isMobile) {
+                  setActiveSkill(activeSkill === skill.name ? null : skill.name);
+                }
+              }}
               className="relative group"
             >
-              {/* Main Skill Card */}
+              {/* Card */}
               <Motion.div
-                whileHover={{ 
-                  scale: 1.01, 
-                  y: -2,
-                  transition: { duration: 0.2 }
-                }}
+                whileHover={{ scale: 1.01, y: -2 }}
+                transition={{ duration: 0.2 }}
                 className="glass rounded-2xl h-full flex flex-col justify-between p-6 border border-glass-border shadow-orange/20 hover:shadow-orange/40 transition-all duration-300 cursor-pointer relative overflow-hidden"
               >
-                {/* Subtle background gradient on hover */}
                 <Motion.div
                   className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={false}
                 />
-                
-                {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
@@ -199,21 +200,19 @@ const Skills = () => {
                       <p className="text-sm text-gray-400">{skill.level}</p>
                     </div>
                   </div>
-                  
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    {skill.description}
-                  </p>
-                  
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">{skill.description}</p>
                   <div className="flex items-center justify-between text-xs text-gray-400">
                     <span>{skill.projects}</span>
-                    <span className="text-primary font-medium">Hover for details</span>
+                    <span className="text-primary font-medium">
+                      {isMobile ? 'Tap for details' : 'Hover for details'}
+                    </span>
                   </div>
                 </div>
               </Motion.div>
 
-              {/* Refined Hover Details Overlay */}
+              {/* Details */}
               <AnimatePresence>
-                {hoveredSkill === skill.name && (
+                {(hoveredSkill === skill.name || activeSkill === skill.name) && (
                   <Motion.div
                     initial={{ opacity: 0, scale: 0.95, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -223,7 +222,6 @@ const Skills = () => {
                   >
                     <div className="glass rounded-2xl p-6 border border-glass-border shadow-orange/50 h-full">
                       <div className="h-full flex flex-col">
-                        {/* Header */}
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center">
                             <skill.icon className="text-xl text-primary" />
@@ -233,13 +231,7 @@ const Skills = () => {
                             <p className="text-xs text-gray-400">{skill.level} • {skill.projects}</p>
                           </div>
                         </div>
-
-                        {/* Preview */}
-                        <div className="mb-4">
-                          {skill.preview}
-                        </div>
-
-                        {/* Code Snippet */}
+                        <div className="mb-4">{skill.preview}</div>
                         <div className="flex-1">
                           <p className="text-xs text-gray-400 mb-2">Code Example:</p>
                           <pre className="text-xs bg-background/80 text-primary p-3 rounded-lg overflow-auto max-h-24 border border-primary/20">
@@ -255,7 +247,7 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills Summary */}
+        {/* Summary */}
         <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
