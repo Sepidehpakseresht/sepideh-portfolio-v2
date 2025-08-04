@@ -1,61 +1,74 @@
 import React, { useState } from 'react';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import PortfolioV2Cover from '../assets/portfolio2-cover.png';
+import PortfolioV2Prev from '../assets/portfolio2-preview.png';
+import PortfolioV1Prev from '../assets/portfolio-preview.png';
+import PortfolioV1Cover from '../assets/portfolio-cover.png';
+import InnergixCover from '../assets/innergix-cover.png';
+import InnergixPrev from '../assets/innergix-preview.png'
+import TechPrev from '../assets/tech-preview.png';
+import TechCover from '../assets/tech-cover.png';
+import AgencyPrev from '../assets/agancy-preview.png';
+import AgencyCover from '../assets/agancy-cover.png';
+import GolzarfPrev from '../assets/question-mark.avif';
+import GolzarfCover from '../assets/question-mark.avif';
+
 
 const projects = [
   {
     title: "Portfolio-v2",
     description: "Modern React portfolio with realistic 3D VS Code editor, interactive hover effects, and professional orange/dark theme design.",
-    image: "/portfolio2-cover.png",
+    image: PortfolioV2Cover,
     technologies: ["React 18", "Three.js", "Framer Motion", "Tailwind CSS", "Vite", "Vercel"],
     github: "https://github.com/Sepidehpakseresht/sepideh-portfolio-v2.git",
     live: "#",
-    preview: "/portfolio2-preview.png"
+    preview: PortfolioV2Prev
   },
   {
     title: "Portfolio-v1",
     description: " Interactive portfolio featuring 3D VS Code editor, Framer Motion animations, and modern glassmorphism design.",
-    image: "/portfolio-cover.png",
+    image: PortfolioV1Cover,
     technologies: ["React 18", "Three.js", "Framer Motion", "Tailwind CSS", "Vite", "Vercel"],
     github: "https://github.com/Sepidehpakseresht/Sepideh-portfolio.git",
     live: "https://sepideh-portfolio-n6yfdmywl-sepidehpaksereshts-projects.vercel.app/",
-    preview: "/portfolio-preview.png"
+    preview: PortfolioV1Prev
   },
   {
     title: "Innergix",
     description: "React-based business website built with Vite for fast development and optimal performance.",
-    image: "/innergix-preview.png",
+    image: InnergixCover,
     technologies: ["React", "Vite", "HTML", "CSS"],
     github: "https://github.com/Sepidehpakseresht/innergix.git",
     live: "https://www.innergix.com/",
-    preview: "/innergix-cover.png"
+    preview: InnergixPrev
   },
   {
     title: "Tech-immigrants Landing Page",
     description: "A storytelling-based landing page for immigrant tech professionals. Clean, modern UI and smooth scroll.",
-    image: "/tech-cover.png",
+    image: TechCover,
     technologies: ["HTML5", "CSS3", "Bootstrap", "Vercel"],
     github: "https://github.com/Sepidehpakseresht/Tech-Immigrants.git",
     live: "https://tech-immigrants.vercel.app/",
-    preview: "/tech-preview.png"
+    preview: TechPrev
   },
   {
     title: "Creative Agency Landing Page",
     description: "Modern, fully responsive agency landing page with smooth animations and professional design.",
-    image: "/agancy-cover.png",
+    image: AgencyCover,
     technologies: ["HTML5", "CSS3", "JavaScript", "Vercel"],
     github: "https://github.com/Sepidehpakseresht/agency-landing-page.git",
     live: "https://agencylandingpage-theta.vercel.app/",
-    preview: "/agancy-preview.png"
+    preview: AgencyPrev
   },
   {
     title: "Golzarf Factory",
     description: "Developed a responsive, Farsi-first website for Golzarf with interactive 3D visuals and a clean, scalable UI.",
-    image: "/question-mark.avif",
+    image: GolzarfCover,
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Three.js", "Blender"],
     github: "https://github.com/Sepidehpakseresht",
     live: "#",
-    preview: "/question-mark.avif"
+    preview: GolzarfPrev
   }
 ];
 

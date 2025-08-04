@@ -6,12 +6,14 @@ import Works from './components/Works';
 import Experience from './components/Experienxe/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { Suspense } from 'react';
 
 function App() {
   return (
     <div className="bg-background text-white min-h-screen">
       <Header />
       <main>
+       <Suspense fallback={<div className="text-white text-center">🚀 Launching...</div>}></Suspense>
         <Hero />
         <AboutMe />
         <Skills />
